@@ -1,0 +1,248 @@
+
+/* ---------- Global styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #252642;
+  background: #f5f6fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #eeebff 0, transparent 35%),
+    #f5f6fc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* ---------- Main layout ---------- */
+.app {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+  padding: 40px 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #302c69;
+}
+
+.header p {
+  margin: 12px 0 0;
+  color: #777995;
+  font-size: 1.05rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e8f4;
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 36px);
+  margin-bottom: 26px;
+  box-shadow: 0 12px 35px rgba(54, 47, 111, 0.06);
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  color: #292746;
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+}
+
+.card > p {
+  color: #7a7d99;
+  line-height: 1.7;
+}
+
+/* ---------- File upload ---------- */
+input[type="file"] {
+  display: block;
+  width: 100%;
+  margin: 22px 0;
+  padding: 20px;
+  border: 2px dashed #c9c2ff;
+  border-radius: 16px;
+  background: #f8f7ff;
+  color: #555573;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  margin-right: 14px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #e9e5ff;
+  color: #5143cc;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #ddd7ff;
+}
+
+/* ---------- Primary button ---------- */
+button {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6655e8, #4e3dcc);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(91, 73, 218, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(91, 73, 218, 0.25);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---------- Error message ---------- */
+.error {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fff1f2;
+  color: #b42332;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Resume information ---------- */
+.card h3 {
+  margin: 28px 0 16px;
+  color: #302d58;
+  font-size: 1.15rem;
+}
+
+.card strong {
+  color: #4f46b8;
+}
+
+/* ---------- Skill badges ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid #dcd6ff;
+  border-radius: 999px;
+  background: #f0edff;
+  color: #5141c7;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* ---------- Extracted resume text ---------- */
+.resume-text {
+  max-height: 360px;
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #e5e5f1;
+  border-radius: 14px;
+  background: #f7f8fc;
+  color: #444761;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 20px 0;
+  color: #898ba4;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+/* ---------- Mobile responsive ---------- */
+@media (max-width: 600px) {
+  .app {
+    width: min(100% - 22px, 900px);
+    padding-top: 26px;
+  }
+
+  .card {
+    border-radius: 18px;
+    padding: 22px 18px;
+  }
+
+  input[type="file"] {
+    padding: 14px;
+  }
+
+  .resume-text {
+    padding: 14px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Fix horizontal overflow */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.app {
+  width: min(900px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.card {
+  width: 100%;
+  min-width: 0;
+}
+
+.resume-text {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: calc(100% - 24px);
+  }
+}
